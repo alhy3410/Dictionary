@@ -2,10 +2,10 @@ require('rspec')
 require('definition')
 
 describe('Definitions') do
-  #
-  # before() do
-  #   Definitions.clear()
-  # end
+
+  before() do
+    Definition.clear()
+  end
 
 
   describe('#make_definition') do
@@ -15,17 +15,19 @@ describe('Definitions') do
     end
   end
 
-  # describe('#save') do
-  #   it('will save a definition to the array') do
-  #     new_definition = Definition.new({:make_definition => "This is definition 1"})
-  #     new_definition.save()
-  #     expect(Definition.all()).to(eq[new_definition])
-  #   end
-  # end
-
   describe('.all') do
     it('will show an empty array where all definitions will be held') do
       expect(Definition.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it('will save a definition to the array') do
+      new_definition = Definition.new({:make_definition => "This is definition 1"})
+      new_definition.save()
+      expect(Definition.all()).to(eq([new_definition]))
+    end
+  end
+
+
 end
