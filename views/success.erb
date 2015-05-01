@@ -1,0 +1,7 @@
+<h1>Here are the words in your dictionary! </h1>
+
+<ul>
+  <% @words.each() do |word| %>
+  <li><a href="/words/ <%= @words.id() %>"> <%= @words.word_name()%></a></li>
+  <% end %>
+</ul>
