@@ -3,6 +3,10 @@ require('words')
 
 describe('Words') do
 
+  before() do
+    Words.clear()
+  end
+
   describe('#word_name') do
     it("will tell you the name of the word") do
       new_word = Words.new({:word_name => "Word1"})
@@ -30,5 +34,13 @@ describe('Words') do
       expect(Words.all()).to(eq([new_word]))
     end
   end
-  
+
+  describe('.clear') do
+    it('will clear all words from the list') do
+      new_word = Words.new({:word_name => "Word1"}).save
+      Words.clear()
+      expect(Words.all()).to(eq([]))
+    end
+  end
+
 end
