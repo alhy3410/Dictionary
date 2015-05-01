@@ -37,4 +37,13 @@ describe('Definitions') do
     end
   end
 
+  describe('.find') do
+    it('will allow users to find their definition based on the id') do
+      new_definition = Definition.new({:make_definition => "This is definition 1"})
+      new_definition.save()
+      new_definition1 = Definition.new({:make_definition => "This is definition 2"})
+      new_definition1.save()
+      expect(Definition.find(new_definition1.id())).to(eq(new_definition1))
+    end
+  end
 end
