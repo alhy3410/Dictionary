@@ -22,4 +22,13 @@ describe('Words') do
       expect(Words.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it('will save the word to the all list') do
+      new_word = Words.new({:word_name => "Word1"})
+      new_word.save()
+      expect(Words.all()).to(eq([new_word]))
+    end
+  end
+  
 end
