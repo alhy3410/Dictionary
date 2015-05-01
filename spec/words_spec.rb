@@ -52,4 +52,14 @@ describe('Words') do
       expect(Words.find(new_word1.id())).to(eq(new_word1))
     end
   end
+
+  describe('#add_definition') do
+    it('adds a new definition to the word') do
+      new_word = Words.new({:word_name => "Word1"})
+      new_definition = Definition.new({:make_definition => "This is definition 1"})
+      new_word.add_definition(new_definition)
+      expect(new_word.definitions_list()).to(eq([new_definition]))
+    end
+  end
+
 end
