@@ -9,4 +9,11 @@ describe('Words') do
       expect(new_word.word_name()).to(eq("Word1"))
     end
   end
+
+  describe('#definitions_list') do
+    it("will return an empty array where it will hold all the definitions for the word") do
+      new_word = Words.new({:word_name => "Word1"})
+      expect(new_word.definitions_list()).to(eq([]))
+    end
+  end
 end

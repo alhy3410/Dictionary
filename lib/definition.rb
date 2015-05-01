@@ -32,7 +32,4 @@ class Definition
     end
     found_definition
   end
-
-
-
 end
