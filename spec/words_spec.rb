@@ -16,4 +16,10 @@ describe('Words') do
       expect(new_word.definitions_list()).to(eq([]))
     end
   end
+
+  describe('.all') do
+    it("will return an empty array which will hold all the words") do
+      expect(Words.all()).to(eq([]))
+    end
+  end
 end

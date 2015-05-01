@@ -10,5 +10,10 @@ class Words
   define_method(:definitions_list) do
     @definitions_list
   end
+
+  define_singleton_method(:all) do
+    @@all_words
+  end
   
+
 end
