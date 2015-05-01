@@ -29,5 +29,12 @@ describe('Definitions') do
     end
   end
 
+  describe('#id') do
+    it("will allow users to add an id to their definition so they can find it later") do
+      new_definition = Definition.new({:make_definition => "This is definition 1"})
+      new_definition.save()
+      expect(new_definition.id()).to(eq(1))
+    end
+  end
 
 end
