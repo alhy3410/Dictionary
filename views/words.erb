@@ -1,0 +1,9 @@
+<h1>Here are the words in your dictionary! </h1>
+
+<ul>
+  <% @words.each() do |word| %>
+  <li><a href="/words/<%= word.id() %>"> <%= word.word_name() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/">Back to main page</a>

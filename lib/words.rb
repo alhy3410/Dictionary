@@ -1,11 +1,15 @@
 class Words
   @@all_words = []
-  attr_reader(:word_name)
 
-  define_method(:initialize) do |attributes|
-    @word_name = attributes[:word_name]
+
+  define_method(:initialize) do |word_name|
+    @word_name = word_name
     @definitions_list = []
     @id = @@all_words.length() + 1
+  end
+
+  define_method(:word_name) do
+    @word_name
   end
 
   define_method(:definitions_list) do

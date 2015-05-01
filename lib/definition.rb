@@ -2,8 +2,8 @@ class Definition
   @@all_definitions = []
   attr_reader(:make_definition)
 
-  define_method(:initialize) do |attributes|
-    @make_definition = attributes[:make_definition]
+  define_method(:initialize) do |make_definition|
+    @make_definition = make_definition
     @id = @@all_definitions.length() + 1
   end
 
