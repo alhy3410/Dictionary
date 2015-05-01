@@ -5,6 +5,7 @@ class Words
   define_method(:initialize) do |attributes|
     @word_name = attributes[:word_name]
     @definitions_list = []
+    @id = @@all_words.length() + 1
   end
 
   define_method(:definitions_list) do
@@ -21,5 +22,19 @@ class Words
 
   define_singleton_method(:clear) do
     @@all_words = []
+  end
+
+  define_method(:id) do
+    @id
+  end
+
+  define_singleton_method(:find) do |identification|
+    found_word = nil
+    @@all_words.each() do |word|
+      if word.id().eql?(identification)
+        found_word = word
+      end
+    end
+    found_word
   end
 end

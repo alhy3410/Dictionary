@@ -43,4 +43,13 @@ describe('Words') do
     end
   end
 
+  describe('.find') do
+    it('will return the word by the id number') do
+      new_word = Words.new({:word_name => "Word1"})
+      new_word.save()
+      new_word1 = Words.new({:word_name => "Word2"})
+      new_word1.save()
+      expect(Words.find(new_word1.id())).to(eq(new_word1))
+    end
+  end
 end
